@@ -180,7 +180,7 @@ public class Calendar : MonoBehaviour {
 				Dias [a].GetComponentInChildren<Text> ().text = DiasEnMes_M.ToString ("D");
 				Dias [a].interactable = false;
 				Dias [a].GetComponent<Image> ().enabled = false;
-				Dias [a].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
+				Dias [a].GetComponentInChildren<Text> ().enabled = false;
 				DiasEnMes_M -= 1;
 			}			
 
@@ -213,8 +213,7 @@ public class Calendar : MonoBehaviour {
 					Dias [i - 1].gameObject.SetActive (true);
 					Dias [i - 1].interactable = false;
 					Dias [i -1].GetComponent<Image> ().enabled = false;
-					Dias [i -1].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
-					Dias [i - 1].GetComponentInChildren<Text> ().text = Martes_Uno.ToString ("D");
+					Dias [i -1].GetComponentInChildren<Text> ().enabled = false;
 					Martes_Uno += 1;
 				}
 			}
@@ -238,8 +237,7 @@ public class Calendar : MonoBehaviour {
 			for (int a = 1; a > -1; a--) {
 				Dias [a].gameObject.SetActive (true);
 				Dias [a].GetComponent<Image> ().enabled = false;
-				Dias [a].GetComponentInChildren<Text> ().text = DiasEnMes_MI.ToString ("D");
-				Dias [a].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
+				Dias [a].GetComponentInChildren<Text> ().enabled = false;
 				Dias [a].interactable = false;
 				DiasEnMes_MI -= 1;
 			}			
@@ -273,9 +271,8 @@ public class Calendar : MonoBehaviour {
 					Dias [i - 1].gameObject.SetActive (true);
 					Dias [i - 1].interactable = false;
 					Dias [i - 1].GetComponent<Image> ().enabled = false;
-					Dias [i -1].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
-					Dias [i - 1].GetComponentInChildren<Text> ().text = Miercoles_Uno.ToString ("D");
-					Miercoles_Uno += 1;
+					Dias [i -1].GetComponentInChildren<Text> ().enabled = false;
+					Miercoles_Uno += 1;					
 				}
 			}
 			break;
@@ -299,7 +296,7 @@ public class Calendar : MonoBehaviour {
 				Dias [a].GetComponentInChildren<Text> ().text = DiasEnMes_J.ToString ("D");
 				Dias [a].interactable = false;
 				Dias [a].GetComponent<Image> ().enabled = false;
-				Dias [a].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
+				Dias [a].GetComponentInChildren<Text> ().enabled = false;
 				DiasEnMes_J -= 1;
 			}			
 
@@ -331,8 +328,7 @@ public class Calendar : MonoBehaviour {
 					Dias [i - 1].gameObject.SetActive (true);
 					Dias [i - 1].interactable = false;
 					Dias [i - 1].GetComponent<Image> ().enabled = false;
-					Dias [i - 1].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
-					Dias [i - 1].GetComponentInChildren<Text> ().text = Jueves_Uno.ToString ("D");
+					Dias [i - 1].GetComponentInChildren<Text> ().enabled = false;
 					Jueves_Uno += 1;
 				}
 				}
@@ -357,7 +353,7 @@ public class Calendar : MonoBehaviour {
 				Dias [a].GetComponentInChildren<Text> ().text = DiasEnMes_V.ToString ("D");
 				Dias [a].interactable = false;
 				Dias [a].GetComponent<Image> ().enabled = false;
-				Dias [a].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
+				Dias [a].GetComponentInChildren<Text> ().enabled = false;
 
 				DiasEnMes_V -= 1;
 			}			
@@ -390,8 +386,7 @@ public class Calendar : MonoBehaviour {
 					Dias [i - 1].gameObject.SetActive (true);
 					Dias [i - 1].interactable = false;
 					Dias [i - 1].GetComponent<Image> ().enabled = false;
-					Dias [i - 1].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
-					Dias [i - 1].GetComponentInChildren<Text> ().text = Viernes_Uno.ToString ("D");
+					Dias [i - 1].GetComponentInChildren<Text> ().enabled = false;
 					Viernes_Uno += 1;
 				}
 				}
@@ -416,7 +411,7 @@ public class Calendar : MonoBehaviour {
 				Dias [a].GetComponentInChildren<Text> ().text = DiasEnMes_S.ToString ("D");
 				Dias [a].interactable = false;
 				Dias [a].GetComponent<Image> ().enabled = false;
-				Dias [a].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
+				Dias [a].GetComponentInChildren<Text> ().enabled = false;
 				DiasEnMes_S -= 1;
 			}			
 
@@ -450,8 +445,7 @@ public class Calendar : MonoBehaviour {
 					Dias [i - 1].gameObject.SetActive (true);
 					Dias [i - 1].interactable = false;
 					Dias [i -1].GetComponent<Image> ().enabled = false;
-					Dias [i -1].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
-					Dias [i - 1].GetComponentInChildren<Text> ().text = Sabado_Uno.ToString ("D");
+					Dias [i -1].GetComponentInChildren<Text> ().enabled = false;
 					Sabado_Uno += 1; 
 				}
 				}
@@ -478,7 +472,7 @@ public class Calendar : MonoBehaviour {
 				Dias [a].GetComponentInChildren<Text> ().text = DiasEnMes_D.ToString ("D");
 				Dias [a].interactable = false;
 				Dias [a].GetComponent<Image> ().enabled = false;
-				Dias [a].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
+				Dias [a].GetComponentInChildren<Text> ().enabled = false;
 				DiasEnMes_D -= 1;
 			}			
 
@@ -513,8 +507,7 @@ public class Calendar : MonoBehaviour {
 					Dias [i - 1].gameObject.SetActive (true);
 					Dias [i - 1].interactable = false;
 					Dias [i - 1].GetComponent<Image> ().enabled = false;
-					Dias [i - 1].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
-					Dias [i - 1].GetComponentInChildren<Text> ().text = Domingo_uno.ToString ("D"); 
+					Dias [i - 1].GetComponentInChildren<Text> ().enabled = false; 
 					Domingo_uno += 1;
 				}
 			}
@@ -527,6 +520,7 @@ public class Calendar : MonoBehaviour {
 
 		for (int i = 0; i < Dias.Length; i++) {
 			Dias [i].GetComponent<Image> ().enabled = true;
+			Dias[i].GetComponentInChildren<Text>().enabled = true;
 			Dias [i].GetComponentInChildren<Text> ().color = Color.white;
 			Dias [i].gameObject.SetActive (false);
 
@@ -547,6 +541,7 @@ public class Calendar : MonoBehaviour {
 		for (int i = 0; i < Dias.Length; i++) {
 
 			Dias [i].gameObject.SetActive (false);
+			Dias[i].GetComponentInChildren<Text>().enabled = true;
 			Dias [i].GetComponent<Image> ().enabled = true;
 			Dias [i].GetComponentInChildren<Text> ().color = Color.white; 
 		}
