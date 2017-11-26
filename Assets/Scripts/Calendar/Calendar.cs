@@ -151,8 +151,7 @@ public class Calendar : MonoBehaviour {
 					Dias [i - 1].gameObject.SetActive (true);
 					Dias [i - 1].interactable = false;
 					Dias [i - 1].GetComponent<Image> ().enabled = false;
-					Dias [i -1].GetComponentInChildren<Text> ().color = new Color(Color_Dias_Antes.r, Color_Dias_Antes.g, Color_Dias_Antes.b);
-					Dias [i - 1].GetComponentInChildren<Text> ().text = Lunes_Uno.ToString ("D");
+					Dias [i -1].GetComponentInChildren<Text> ().enabled = false;
 					Lunes_Uno += 1;
 				}
 
