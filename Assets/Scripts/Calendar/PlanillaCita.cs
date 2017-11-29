@@ -47,13 +47,9 @@ public class PlanillaCita : MonoBehaviour {
 				if (PD_Call.Citas [i].Año == year && PD_Call.Citas [i].Mes == month
 				   && PD_Call.Citas [i].Dia == day && PD_Call.Citas [i].Hora == hora && PD_Call.Citas [i].Minuto == minuto
 					&& PD_Call.Citas [i].PM == Pm) {
-
-					Debug.Log (Pm);
+					
 					Paciente.text = PD_Call.Citas [i].Nombre;
-					if (PD_Call.Citas [i].Cedula != null && PD_Call.Citas [i].Cedula != "") {
-						CedulaText.text = "C.I " + PD_Call.Citas [i].Cedula;
-					}
-
+					
 					if (PD_Call.Citas [i].tlf1 != "" && PD_Call.Citas [i].tlf1 != null) {
 						Tlf_Text.text = PD_Call.Citas [i].tlf1;
 					}			
@@ -76,7 +72,6 @@ public class PlanillaCita : MonoBehaviour {
 		Formulario.GetComponent<FormularioCita> ().Nombre.text = null;
 		Formulario.GetComponent<FormularioCita> ().Cedula.text = null;
 		Formulario.GetComponent<FormularioCita> ().tlf1.text = null;
-		Formulario.GetComponent<FormularioCita> ().tlf2.text = null;
 		Formulario.GetComponent<FormularioCita> ().Email.text = null;
 		Formulario.SetActive (true);
 

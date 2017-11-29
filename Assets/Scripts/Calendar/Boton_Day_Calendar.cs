@@ -34,7 +34,6 @@ public class Boton_Day_Calendar : MonoBehaviour {
 		datcalendar.datetime = new DateTime (datcalendar.year, datcalendar.month, DiaCurrent);
 		datcalendar.day = DiaCurrent;
 		PD_call.PermitirInstancia = true;
-		datcalendar.Texto_planilla_dia.text = DiaCurrent + "/" + datcalendar.month + "/" + datcalendar.year;
 		datcalendar.activar.SetActive (true);
 		datcalendar.desactivar.SetActive (false);
 	}

@@ -680,9 +680,9 @@ public class Citas{
 	public int Minuto;
 	public bool PM;
 	public string Nombre;
-	public string Cedula;
+	public string Apellido;
 	public string tlf1;
-	public string tlf2;
 	public string email;
-
+	public string Motivo;
+	
 }

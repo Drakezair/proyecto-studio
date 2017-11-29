@@ -23,8 +23,6 @@ public class FormularioCita : MonoBehaviour {
 
 	public InputField tlf1;
 
-	public InputField tlf2;
-
 	public InputField Email;
 
 	public Text DatosFormulario;
@@ -75,10 +73,7 @@ public class FormularioCita : MonoBehaviour {
 
 					tlf1.GetComponent<Image> ().fillCenter = false;
 					tlf1.interactable = false;
-
-					tlf2.GetComponent<Image> ().fillCenter = false;
-					tlf2.interactable = false;
-
+					
 					Email.GetComponent<Image> ().fillCenter = false;
 					Email.interactable = false;
 				
@@ -91,16 +86,9 @@ public class FormularioCita : MonoBehaviour {
 						    && PD_Call.Citas [i].PM == PM) {
 
 							Nombre.text = PD_Call.Citas [i].Nombre;
-							if (PD_Call.Citas [i].Cedula != null && PD_Call.Citas [i].Cedula != "") {
-								Cedula.text = "C.I " + PD_Call.Citas [i].Cedula;
-							}
 
 							if (PD_Call.Citas [i].tlf1 != "" && PD_Call.Citas [i].tlf1 != null) {
 								tlf1.text = PD_Call.Citas [i].tlf1;
-							}
-
-							if (PD_Call.Citas [i].tlf2 != "" && PD_Call.Citas [i].tlf2 != null) {
-								tlf2.text = PD_Call.Citas [i].tlf2;
 							}
 
 							if (PD_Call.Citas [i].email != "" && PD_Call.Citas [i].email != null) {
@@ -139,9 +127,6 @@ public class FormularioCita : MonoBehaviour {
 					tlf1.GetComponent<Image> ().fillCenter = true;
 					tlf1.interactable = true;
 
-					tlf2.GetComponent<Image> ().fillCenter = true;
-					tlf2.interactable = true;
-
 					Email.GetComponent<Image> ().fillCenter = true;
 					Email.interactable = true;
 
@@ -160,9 +145,6 @@ public class FormularioCita : MonoBehaviour {
 
 				tlf1.GetComponent<Image> ().fillCenter = true;
 				tlf1.interactable = true;
-
-				tlf2.GetComponent<Image> ().fillCenter = true;
-				tlf2.interactable = true;
 
 				Email.GetComponent<Image> ().fillCenter = true;
 				Email.interactable = true;
@@ -185,14 +167,7 @@ public class FormularioCita : MonoBehaviour {
 			}
 		}
 	}
-
-	public void HacerCita(){													//HACER NUEVA CITA
-
-		Pop_up_NuevaCita.SetActive (true);
-
-	}
-
-	void ConfirmarHacerCita(){
+	public void HacerCita(){
 
 		if (Nombre.text != null && Nombre.text != "") {
 			if (!CitaExist ()) {
@@ -205,16 +180,9 @@ public class FormularioCita : MonoBehaviour {
 				NuevaCita.Minuto = minuto;
 				NuevaCita.Nombre = Nombre.text;
 				NuevaCita.PM = PM;
-				if (Cedula.text != null && Cedula.text != "") {
-					NuevaCita.Cedula = Cedula.text;
-				}
 
 				if (tlf1.text != null && tlf1.text != "") {
 					NuevaCita.tlf1 = tlf1.text;
-				}
-
-				if (tlf2.text != null && tlf2.text != "") {
-					NuevaCita.tlf2 = tlf2.text;
 				}
 
 				if (Email.text != null && Email.text != "") {
@@ -227,13 +195,6 @@ public class FormularioCita : MonoBehaviour {
 		} else {
 			Nombre.placeholder.color = Color.red;
 		}
-	}
-
-	public void Boton_Confirmar_NuevaCita(){
-
-		ConfirmarHacerCita ();
-		Pop_up_NuevaCita.SetActive (false);
-
 	}
 
 	public void CancelarNuevaCita(){
@@ -255,14 +216,10 @@ public class FormularioCita : MonoBehaviour {
 			    && PD_Call.Citas [i].Dia == day && PD_Call.Citas [i].Hora == hora && PD_Call.Citas [i].Minuto == minuto 
 				&& PD_Call.Citas[i].PM ==  PM) {
 
-				if (PD_Call.Citas [i].Nombre != Nombre.text || PD_Call.Citas [i].Cedula != Cedula.text
-				    || PD_Call.Citas [i].tlf1 != tlf1.text || PD_Call.Citas [i].tlf2 != tlf2.text
-				    || PD_Call.Citas [i].email != Email.text) {
+				if (PD_Call.Citas [i].Nombre != Nombre.text || PD_Call.Citas [i].tlf1 != tlf1.text || PD_Call.Citas [i].email != Email.text) {
 
 					PD_Call.Citas [i].Nombre = Nombre.text;
-					PD_Call.Citas [i].Cedula = Cedula.text;
 					PD_Call.Citas [i].tlf1 = tlf1.text;
-					PD_Call.Citas [i].tlf2 = tlf2.text;
 					PD_Call.Citas [i].email = Email.text;
 					break;
 				}
@@ -293,9 +250,7 @@ public class FormularioCita : MonoBehaviour {
 				&& PD_Call.Citas[i].PM ==  PM) {
 
 				Nombre.text = PD_Call.Citas [i].Nombre;
-				Cedula.text = "C.I " + PD_Call.Citas [i].Cedula;
 				tlf1.text = PD_Call.Citas [i].tlf1;
-				tlf2.text = PD_Call.Citas [i].tlf2;
 				Email.text = PD_Call.Citas [i].email;
 
 			}
@@ -320,7 +275,6 @@ public class FormularioCita : MonoBehaviour {
 					Nombre.text = null;
 					Cedula.text = null;
 					tlf1.text = null;
-					tlf2.text = null;
 					Email.text = null;
 
 
@@ -347,6 +301,7 @@ public class FormularioCita : MonoBehaviour {
 	public void CerrarFormulario(){
 
 		gameObject.SetActive (false);
+		Nombre.placeholder.color = Color.gray;
 
 	}
 

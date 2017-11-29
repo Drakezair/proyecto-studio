@@ -33,10 +33,7 @@ public class Calendar : MonoBehaviour {
 	public GameObject desactivar;
 
 	public GameObject activar;
-
-	public Text Texto_planilla_dia;
-
-
+	
 	//Ajustes Dias
 
 	public Toggle[] Dias_Seleccionados;
@@ -47,8 +44,7 @@ public class Calendar : MonoBehaviour {
 		year = DateTime.Now.Year;
 		month = DateTime.Now.Month;
 		day = DateTime.Now.Day;
-		datetime = DateTime.Now;
-		Texto_planilla_dia.text = day + "/" + month +"/" + year;
+		datetime = DateTime.Now;		
 	
 	}
 	
