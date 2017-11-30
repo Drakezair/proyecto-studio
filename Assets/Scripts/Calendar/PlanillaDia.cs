@@ -143,6 +143,10 @@ public class PlanillaDia : MonoBehaviour {
 
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horaL.ToString ("D") + ":" + minutosL.ToString ("D") + "Pm";
 				}
+
+				if (int.Parse (InputHoraAm [2].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+					PlanillaCitas [i].SetActive (false);
+				}
 				minutosL += intervaloR (1);
 				mL += 1;
 			}
@@ -175,7 +179,7 @@ public class PlanillaDia : MonoBehaviour {
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horam.ToString ("D") + ":" + minutosm.ToString ("D") + "Am";
 				}
 
-				if (int.Parse (InputHoraAm [1].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+				if (int.Parse (InputHoraAm [3].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
 					PlanillaCitas [i].SetActive (false);
 				}
 				minutosm += intervaloR (2);
@@ -206,6 +210,10 @@ public class PlanillaDia : MonoBehaviour {
 				} else {
 
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horam.ToString ("D") + ":" + minutosm.ToString ("D") + "Pm";
+				}
+
+				if (int.Parse (InputHoraAm [4].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+					PlanillaCitas [i].SetActive (false);
 				}
 				minutosm += intervaloR (3); 
 				mM += 1;
@@ -240,7 +248,7 @@ public class PlanillaDia : MonoBehaviour {
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horami.ToString ("D") + ":" + minutosmi.ToString ("D") + "Am";
 				}
 
-				if (int.Parse (InputHoraAm [1].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+				if (int.Parse (InputHoraAm [5].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
 					PlanillaCitas [i].SetActive (false);
 				}
 				minutosmi += intervaloR (4);
@@ -271,6 +279,10 @@ public class PlanillaDia : MonoBehaviour {
 				} else {
 
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horami.ToString ("D") + ":" + minutosmi.ToString ("D") + "Pm";
+				}
+
+				if (int.Parse (InputHoraAm [6].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+					PlanillaCitas [i].SetActive (false);
 				}
 				minutosmi += intervaloR (5);
 				mMI += 1;
@@ -305,7 +317,7 @@ public class PlanillaDia : MonoBehaviour {
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horaj.ToString ("D") + ":" + minutosj.ToString ("D") + "Am";
 				}
 
-				if (int.Parse (InputHoraAm [1].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+				if (int.Parse (InputHoraAm [7].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
 					PlanillaCitas [i].SetActive (false);
 				}
 				minutosj += intervaloR (5);
@@ -336,6 +348,10 @@ public class PlanillaDia : MonoBehaviour {
 				} else {
 
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horaj.ToString ("D") + ":" + minutosj.ToString ("D") + "Pm";
+				}
+
+				if (int.Parse (InputHoraAm [8].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+					PlanillaCitas [i].SetActive (false);
 				}
 				minutosj += intervaloR (6);
 				mJ += 1;
@@ -370,7 +386,7 @@ public class PlanillaDia : MonoBehaviour {
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horav.ToString ("D") + ":" + minutosv.ToString ("D") + "Am";
 				}
 
-				if (int.Parse (InputHoraAm [1].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+				if (int.Parse (InputHoraAm [9].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
 					PlanillaCitas [i].SetActive (false);
 				}
 				minutosv += intervaloR (7);
@@ -401,6 +417,10 @@ public class PlanillaDia : MonoBehaviour {
 				} else {
 
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horav.ToString ("D") + ":" + minutosv.ToString ("D") + "Pm";
+				}
+
+				if (int.Parse (InputHoraAm [10].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+					PlanillaCitas [i].SetActive (false);
 				}
 				minutosv += intervaloR (8);
 				mV += 1;
@@ -435,7 +455,7 @@ public class PlanillaDia : MonoBehaviour {
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horas.ToString ("D") + ":" + minutoss.ToString ("D") + "Am";
 				}
 
-				if (int.Parse (InputHoraAm [1].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+				if (int.Parse (InputHoraAm [11].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
 					PlanillaCitas [i].SetActive (false);
 				}
 				minutoss += intervaloR (9);
@@ -466,6 +486,10 @@ public class PlanillaDia : MonoBehaviour {
 				} else {
 
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horas.ToString ("D") + ":" + minutoss.ToString ("D") + "Pm";
+				}
+
+				if (int.Parse (InputHoraAm [12].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+					PlanillaCitas [i].SetActive (false);
 				}
 				minutoss += intervaloR (10);
 				mS += 1;
@@ -500,7 +524,7 @@ public class PlanillaDia : MonoBehaviour {
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horad.ToString ("D") + ":" + minutosd.ToString ("D") + "Am";
 				}
 
-				if (int.Parse (InputHoraAm [1].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+				if (int.Parse (InputHoraAm [13].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
 					PlanillaCitas [i].SetActive (false);
 				}
 				minutosd += intervaloR (9);
@@ -531,6 +555,10 @@ public class PlanillaDia : MonoBehaviour {
 				} else {
 
 					PlanillaCitas [i].GetComponent<PlanillaCita> ().HoraCita.text = horad.ToString ("D") + ":" + minutosd.ToString ("D") + "Pm";
+				}
+
+				if (int.Parse (InputHoraAm [14].text) == PlanillaCitas [i].GetComponent<PlanillaCita> ().hora) {
+					PlanillaCitas [i].SetActive (false);
 				}
 				minutosd += intervaloR (10);
 				mD += 1;
@@ -683,6 +711,7 @@ public class Citas{
 	public string Apellido;
 	public string tlf1;
 	public string email;
+	[TextArea(10,50)]
 	public string Motivo;
 	
 }

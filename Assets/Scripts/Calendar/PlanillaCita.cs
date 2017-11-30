@@ -21,8 +21,6 @@ public class PlanillaCita : MonoBehaviour {
 
 	public Text Paciente;
 
-	public Text CedulaText;
-
 	public Text Tlf_Text;
 
 	public GameObject Formulario;
@@ -39,8 +37,7 @@ public class PlanillaCita : MonoBehaviour {
 		
 		if (gameObject.activeInHierarchy) {
 
-			Paciente.text = "Nombre";
-			CedulaText.text = "Cedula";
+			Paciente.text = "Paciente";
 			Tlf_Text.text = "Telefono";
 
 			for (int i = 0; i < PD_Call.Citas.Count; i++) {
@@ -48,7 +45,7 @@ public class PlanillaCita : MonoBehaviour {
 				   && PD_Call.Citas [i].Dia == day && PD_Call.Citas [i].Hora == hora && PD_Call.Citas [i].Minuto == minuto
 					&& PD_Call.Citas [i].PM == Pm) {
 					
-					Paciente.text = PD_Call.Citas [i].Nombre;
+					Paciente.text = PD_Call.Citas [i].Nombre + " " + PD_Call.Citas[i].Apellido;
 					
 					if (PD_Call.Citas [i].tlf1 != "" && PD_Call.Citas [i].tlf1 != null) {
 						Tlf_Text.text = PD_Call.Citas [i].tlf1;
@@ -70,9 +67,10 @@ public class PlanillaCita : MonoBehaviour {
 		Formulario.GetComponent<FormularioCita> ().minuto = minuto;
 		Formulario.GetComponent<FormularioCita> ().PM = Pm;
 		Formulario.GetComponent<FormularioCita> ().Nombre.text = null;
-		Formulario.GetComponent<FormularioCita> ().Cedula.text = null;
+		Formulario.GetComponent<FormularioCita> ().Apellido.text = null;
 		Formulario.GetComponent<FormularioCita> ().tlf1.text = null;
 		Formulario.GetComponent<FormularioCita> ().Email.text = null;
+		Formulario.GetComponent<FormularioCita> ().Motivo.text = null;
 		Formulario.SetActive (true);
 
 	}

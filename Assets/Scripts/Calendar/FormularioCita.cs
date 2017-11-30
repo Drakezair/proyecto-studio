@@ -19,11 +19,13 @@ public class FormularioCita : MonoBehaviour {
 
 	public InputField Nombre;
 
-	public InputField Cedula;
+	public InputField Apellido;
 
 	public InputField tlf1;
 
 	public InputField Email;
+
+	public InputField Motivo;
 
 	public Text DatosFormulario;
 
@@ -36,8 +38,6 @@ public class FormularioCita : MonoBehaviour {
 	bool Editando;
 
 	public GameObject Boton_BorrarCita;
-
-	public GameObject Pop_up_NuevaCita;
 
 
 	public GameObject Pop_up_EditarCita;
@@ -68,14 +68,17 @@ public class FormularioCita : MonoBehaviour {
 					Nombre.GetComponent<Image> ().fillCenter = false;
 					Nombre.interactable = false;
 
-					Cedula.GetComponent<Image> ().fillCenter = false;
-					Cedula.interactable = false;
+					Apellido.GetComponent<Image> ().fillCenter = false;
+					Apellido.interactable = false;
 
 					tlf1.GetComponent<Image> ().fillCenter = false;
 					tlf1.interactable = false;
 					
 					Email.GetComponent<Image> ().fillCenter = false;
 					Email.interactable = false;
+
+					Motivo.GetComponent<Image>().fillCenter = false;
+					Motivo.interactable = false;
 				
 
 
@@ -86,6 +89,7 @@ public class FormularioCita : MonoBehaviour {
 						    && PD_Call.Citas [i].PM == PM) {
 
 							Nombre.text = PD_Call.Citas [i].Nombre;
+							Apellido.text = PD_Call.Citas [i].Apellido;
 
 							if (PD_Call.Citas [i].tlf1 != "" && PD_Call.Citas [i].tlf1 != null) {
 								tlf1.text = PD_Call.Citas [i].tlf1;
@@ -95,18 +99,22 @@ public class FormularioCita : MonoBehaviour {
 								Email.text = PD_Call.Citas [i].email;
 							}
 
+							if(PD_Call.Citas[i].Motivo != "" && PD_Call.Citas[i].Motivo != null){
+								Motivo.text = PD_Call.Citas[i].Motivo;
+							}
+
 							if (minuto != 0) {
 								if (PM) {
-									DatosFormulario.text = hora.ToString ("D") + ":" + minuto.ToString ("D") + "pm" + " - " + Nombre.text;
+									DatosFormulario.text = hora.ToString ("D") + ":" + minuto.ToString ("D") + "pm" + " - " + Nombre.text + " " + Apellido.text;
 								} else {
 
-									DatosFormulario.text = hora.ToString ("D") + ":" + minuto.ToString ("D") + "am" + " - " + Nombre.text;
+									DatosFormulario.text = hora.ToString ("D") + ":" + minuto.ToString ("D") + "am" + " - " + Nombre.text + " " + Apellido.text;
 								}
 							} else {
 								if (PM) {
-									DatosFormulario.text = hora.ToString ("D") + ":00pm" + " - " + Nombre.text;
+									DatosFormulario.text = hora.ToString ("D") + ":00pm" + " - " + Nombre.text + " " + Apellido.text;
 								} else {
-									DatosFormulario.text = hora.ToString ("D") + ":00am" + " - " + Nombre.text;
+									DatosFormulario.text = hora.ToString ("D") + ":00am" + " - " + Nombre.text + " " + Apellido.text;
 								}
 							}
 						} 
@@ -121,14 +129,17 @@ public class FormularioCita : MonoBehaviour {
 					Nombre.GetComponent<Image> ().fillCenter = true;
 					Nombre.interactable = true;
 
-					Cedula.GetComponent<Image> ().fillCenter = true;
-					Cedula.interactable = true;
+					Apellido.GetComponent<Image> ().fillCenter = true;
+					Apellido.interactable = true;
 
 					tlf1.GetComponent<Image> ().fillCenter = true;
 					tlf1.interactable = true;
 
 					Email.GetComponent<Image> ().fillCenter = true;
 					Email.interactable = true;
+
+					Motivo.GetComponent<Image>().fillCenter = true;
+					Motivo.interactable = true;
 
 				}
 			} else {
@@ -140,14 +151,17 @@ public class FormularioCita : MonoBehaviour {
 				Nombre.GetComponent<Image> ().fillCenter = true;
 				Nombre.interactable = true;
 
-				Cedula.GetComponent<Image> ().fillCenter = true;
-				Cedula.interactable = true;
+				Apellido.GetComponent<Image> ().fillCenter = true;
+				Apellido.interactable = true;
 
 				tlf1.GetComponent<Image> ().fillCenter = true;
 				tlf1.interactable = true;
 
 				Email.GetComponent<Image> ().fillCenter = true;
 				Email.interactable = true;
+
+				Motivo.GetComponent<Image>().fillCenter = true;
+					Motivo.interactable = true;
 
 				if (minuto != 0) {
 					if (PM) {
@@ -167,9 +181,9 @@ public class FormularioCita : MonoBehaviour {
 			}
 		}
 	}
-	public void HacerCita(){
+	public void HacerCita(){													//HACER CITA
 
-		if (Nombre.text != null && Nombre.text != "") {
+		if (Nombre.text != null && Nombre.text != "" && Apellido.text != "" && Apellido.text != null) {
 			if (!CitaExist ()) {
 				
 				Citas NuevaCita = new Citas ();
@@ -179,6 +193,7 @@ public class FormularioCita : MonoBehaviour {
 				NuevaCita.Hora = hora;
 				NuevaCita.Minuto = minuto;
 				NuevaCita.Nombre = Nombre.text;
+				NuevaCita.Apellido = Apellido.text;
 				NuevaCita.PM = PM;
 
 				if (tlf1.text != null && tlf1.text != "") {
@@ -188,19 +203,21 @@ public class FormularioCita : MonoBehaviour {
 				if (Email.text != null && Email.text != "") {
 					NuevaCita.email = Email.text;
 				}
+				if(Motivo.text != null && Motivo.text != ""){
+					NuevaCita.Motivo = Motivo.text;
+				}
 
 
 				PD_Call.Citas.Add (NuevaCita);
+
+				gameObject.SetActive(false);
+				Nombre.placeholder.color = Color.gray;
+				Apellido.placeholder.color = Color.gray;
 			}
 		} else {
 			Nombre.placeholder.color = Color.red;
+			Apellido.placeholder.color = Color.red;
 		}
-	}
-
-	public void CancelarNuevaCita(){
-
-		Pop_up_NuevaCita.SetActive (false);
-
 	}
 
 	public void EditarCita(){													//EDITAR CITA EXISTENTE
@@ -216,20 +233,29 @@ public class FormularioCita : MonoBehaviour {
 			    && PD_Call.Citas [i].Dia == day && PD_Call.Citas [i].Hora == hora && PD_Call.Citas [i].Minuto == minuto 
 				&& PD_Call.Citas[i].PM ==  PM) {
 
-				if (PD_Call.Citas [i].Nombre != Nombre.text || PD_Call.Citas [i].tlf1 != tlf1.text || PD_Call.Citas [i].email != Email.text) {
+				if (PD_Call.Citas [i].Nombre != Nombre.text || PD_Call.Citas[i].Apellido != Apellido.text 
+				|| PD_Call.Citas [i].tlf1 != tlf1.text || PD_Call.Citas [i].email != Email.text
+				|| PD_Call.Citas[i].Motivo != Motivo.text) {
 
+					
 					PD_Call.Citas [i].Nombre = Nombre.text;
+					PD_Call.Citas [i].Apellido = Apellido.text;
 					PD_Call.Citas [i].tlf1 = tlf1.text;
 					PD_Call.Citas [i].email = Email.text;
-					break;
+					PD_Call.Citas [i].Motivo = Motivo.text;
+					break;					
 				}
 			}
 		}
 	}
 
 	public void Pop_Confirmar_EditarCita(){
-		
+		if(Nombre.text != null && Nombre.text != "" && Apellido.text != "" &&Apellido.text != null){
 		Pop_up_EditarCita.SetActive (true);
+		}else{
+			Nombre.placeholder.color = Color.red;
+			Apellido.placeholder.color = Color.red;
+		}
 
 	}
 
@@ -250,8 +276,10 @@ public class FormularioCita : MonoBehaviour {
 				&& PD_Call.Citas[i].PM ==  PM) {
 
 				Nombre.text = PD_Call.Citas [i].Nombre;
+				Apellido.text = PD_Call.Citas [i].Apellido;
 				tlf1.text = PD_Call.Citas [i].tlf1;
 				Email.text = PD_Call.Citas [i].email;
+				Motivo.text = PD_Call.Citas [i].Motivo;
 
 			}
 		}
@@ -273,9 +301,10 @@ public class FormularioCita : MonoBehaviour {
 					&& PD_Call.Citas[i].PM ==  PM) {
 
 					Nombre.text = null;
-					Cedula.text = null;
+					Apellido.text = null;
 					tlf1.text = null;
 					Email.text = null;
+					Motivo.text = null;
 
 
 					PD_Call.Citas.Remove (PD_Call.Citas [i]);
@@ -302,6 +331,7 @@ public class FormularioCita : MonoBehaviour {
 
 		gameObject.SetActive (false);
 		Nombre.placeholder.color = Color.gray;
+		Apellido.placeholder.color = Color.gray;
 
 	}
 

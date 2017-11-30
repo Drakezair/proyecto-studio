@@ -14,13 +14,11 @@ public class TimeLine : MonoBehaviour {
 
 	private Anim_Funtion Funciones_animar;
 
-	Control_Botones_BarraDeplegable CBBD_Call;
 
 
 	// Use this for initialization
 	void Start () {
 	
-		CBBD_Call = FindObjectOfType<Control_Botones_BarraDeplegable> ();
 		Funciones_animar = GetComponent<Anim_Funtion> ();
 
 		 
